@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&family=Cute+Font&family=Julee&family=Major+Mono+Display&family=Press+Start+2P&family=Smooch+Sans:wght@200;400;600&family=Tourney:wght@400;500;900&display=swap");
+body {
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.intro-text {
+  font-family: Tourney;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.full-identity {
+  font-family: Julee;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.menu-items {
+  font-family: Major Mono Display;
 }
 
-.App-link {
-  color: #61dafb;
+.header-content {
+  /* color: red; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page-content {
+  /* color: red; */
+  font-family: Alkatra;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.menu-content {
+  /* color: red; */
+}
+
+ol {
+  list-style-type: none;
+  counter-reset: my-counter;
+}
+
+ol li {
+  position: relative;
+  padding-left: 30px;
+  line-height: 1;
+}
+
+ol li::before {
+  content: counter(my-counter, decimal-leading-zero);
+  counter-increment: my-counter;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 15px;
 }
