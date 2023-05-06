@@ -6,6 +6,22 @@ body {
   overflow: hidden;
 }
 
+a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  right: 100%;
+  position: absolute;
+  transition: width 0.3s ease 0s, right 0.3s ease 0s;
+  width: 0;
+}
+a:hover:after {
+  width: 105%;
+  right: 0;
+}
+
 .intro-text {
   font-family: Tourney;
 }
@@ -14,23 +30,19 @@ body {
   font-family: Julee;
 }
 
+.others {
+  font-family: Cute Font;
+}
+
 .menu-items {
   font-family: Major Mono Display;
 }
 
-.header-content {
-  /* color: red; */
+.photo {
 }
 
 .page-content {
-  /* color: red; */
   font-family: Alkatra;
-  font-size: 1.3rem;
-  font-weight: 400;
-}
-
-.menu-content {
-  /* color: red; */
 }
 
 ol {

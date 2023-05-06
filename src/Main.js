@@ -31,7 +31,7 @@ export default function Main() {
     },
   };
   return (
-    <div className="home">
+    <div className="home page-content flex flex-col justify-center items-center w-screen h-screen text-rose-600 sm:pb-24 sm:pr-10">
       <div className="intro-wrapper">
         <motion.div className="intro-text flex flex-col justify-center items-center">
           <motion.h1
@@ -73,7 +73,7 @@ export default function Main() {
             <li className="mx-6">
               <div className="link-wrapper">
                 <div className="link tracking-widest">
-                  <a href="/work">
+                  <a className="relative after:bg-rose-600" href="/work">
                     →{/* */}
                     See my projects
                   </a>
@@ -83,7 +83,7 @@ export default function Main() {
             <li className="mx-6">
               <div className="link-wrapper">
                 <div className="link tracking-widest">
-                  <a href="/about">
+                  <a className="relative after:bg-rose-600" href="/about">
                     →{/* */}
                     More about me
                   </a>

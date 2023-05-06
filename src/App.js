@@ -1,8 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import { motion } from "framer-motion";
 import Menu from "./Menu";
 import Main from "./Main";
+import About from "./About";
 import "./App.css";
 
 export default function Root() {
@@ -33,14 +34,12 @@ export default function Root() {
       transition: { ease: "easeOut" },
     },
   };
-  const [color, setColor] = useState("red");
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen((isOpen) => !isOpen);
-    const newColor = color === "red" ? "green" : "red";
-    setColor(newColor);
+    setIsMenuOpen((isMenuOpen) => !isMenuOpen);
   };
-
   const headerIcons = {
     hidden: {
       opacity: 0,
@@ -56,7 +55,6 @@ export default function Root() {
       },
     },
   };
-
   const icon = {
     hidden: {
       opacity: 0,
@@ -67,7 +65,6 @@ export default function Root() {
       transition: { ease: "easeOut" },
     },
   };
-
   const menuButton = {
     hover: {
       scale: 1.2,
@@ -75,13 +72,11 @@ export default function Root() {
     },
     tap: { scale: 0.9 },
   };
-
   var circleStyles = {
     opacity: 1,
     fill: "none",
     stroke: "black",
   };
-
   var rectStyles = {
     width: "6px",
     height: "6px",
@@ -91,17 +86,16 @@ export default function Root() {
     fill: "none",
     stroke: "black",
   };
-
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <>
-      <header className="z-30">
+      <header
+        className={`z-30 ${isMenuOpen ? "text-fuchsia-700" : "text-rose-600"}`}
+      >
         <motion.div
           initial="hidden"
           animate="visible"
           variants={headerIcons}
-          className="header-content static flex items-baseline w-screen mt-4 sm:mt-10 sm:px-10"
+          className="header-content static flex items-baseline w-screen mt-4 sm:mt-10 sm:px-16"
         >
           <div className="left-part flex items-baseline justify-center">
             <motion.div variants={icon} className="header-icon logo mx-4">
@@ -172,9 +166,13 @@ export default function Root() {
         initial="hidden"
         animate={isOpen ? "hidden" : "visible"}
         variants={intro}
-        className="page-content flex flex-col justify-center items-center w-screen h-screen"
       >
-        <Main />
+        <Router>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </Router>
       </motion.div>
     </>
   );

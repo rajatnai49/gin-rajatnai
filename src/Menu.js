@@ -31,35 +31,35 @@ export default function Menu() {
     },
   };
   return (
-    <div className="menu-content flex flex-col justify-center ml-20 w-screen h-screen sm:ml-96">
+    <div className="menu-content flex flex-col justify-center pl-20 w-screen h-screen sm:ml-96 text-fuchsia-700">
       <div className="menu-items text-3xl font-black sm:text-5xl">
         <nav>
           <ol>
             <li>
               <motion.div variants={linkElement} className="item-inner my-8">
                 <a href="/">
-                  <h1>HOME</h1>
+                  <h1 className="menuItem">HOME</h1>
                 </a>
               </motion.div>
             </li>
             <li>
               <motion.div variants={linkElement} className="item-inner my-8">
                 <a href="/work">
-                  <h1>WORK</h1>
+                  <h1 className="menuItem">WORK</h1>
                 </a>
               </motion.div>
             </li>
             <li>
               <motion.div variants={linkElement} className="item-inner my-8">
                 <a href="/about">
-                  <h1>ABOUT</h1>
+                  <h1 className="menuItem">ABOUT</h1>
                 </a>
               </motion.div>
             </li>
             <li>
               <motion.div variants={linkElement} className="item-inner my-8">
                 <a href="/contact">
-                  <h1>CONTACT</h1>
+                  <h1 className="menuItem">CONTACT</h1>
                 </a>
               </motion.div>
             </li>
@@ -74,7 +74,12 @@ export default function Menu() {
                 <div className="item-inner my-5">
                   <div className="link-wrapper">
                     <div className="link">
-                      <a href="#" target="_blank" rel="noreferrer">
+                      <a
+                        className="relative after:bg-fuchsia-700"
+                        href="https://twitter.com/rpsilver36"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         ↗{/* */}
                         twitter
                       </a>
@@ -86,7 +91,12 @@ export default function Menu() {
                 <div className="item-inner my-5 ml-5">
                   <div className="link-wrapper">
                     <div className="link">
-                      <a href="#" target="_blank" rel="noreferrer">
+                      <a
+                        className="relative after:bg-fuchsia-700"
+                        href="https://github.com/rajatnai49"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         ↗{/* */}
                         github
                       </a>
@@ -101,9 +111,14 @@ export default function Menu() {
                 <div className="item-inner">
                   <div className="link-wrapper">
                     <div className="link">
-                      <a href="#" target="_blank" rel="noreferrer">
+                      <a
+                        className="relative after:bg-fuchsia-700"
+                        href="https://www.linkedin.com/in/rajat-nai-5a1425221/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         ↗{/* */}
-                        discord
+                        linkedin
                       </a>
                     </div>
                   </div>
