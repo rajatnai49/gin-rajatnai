@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Alkatra&family=Cute+Font&family=Julee&family=Major+Mono+Display&family=Press+Start+2P&family=Smooch+Sans:wght@200;400;600&family=Tourney:wght@400;500;900&display=swap");
-body {
-  overflow: hidden;
-}
 
 a:after {
   background: none repeat scroll 0 0 transparent;
@@ -22,27 +19,8 @@ a:hover:after {
   right: 0;
 }
 
-.intro-text {
-  font-family: Tourney;
-}
-
-.full-identity {
-  font-family: Julee;
-}
-
-.others {
-  font-family: Cute Font;
-}
-
-.menu-items {
-  font-family: Major Mono Display;
-}
-
-.photo {
-}
-
-.page-content {
-  font-family: Alkatra;
+body {
+  overflow: hidden;
 }
 
 ol {
@@ -63,4 +41,30 @@ ol li::before {
   left: 0;
   bottom: 0;
   font-size: 15px;
+}
+
+.intro-text {
+  font-family: Tourney;
+}
+
+.full-identity {
+  font-family: Julee;
+}
+
+.menu-items {
+  font-family: Major Mono Display;
+}
+
+.others {
+  font-family: Cute Font;
+}
+
+.page-content {
+  font-family: Alkatra;
+}
+
+/* work page  */
+
+.left-side {
+  border-radius: 0 48px 0 0;
 }

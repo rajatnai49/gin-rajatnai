@@ -61,15 +61,18 @@ export default function About() {
           >
             ABOUT
           </motion.h1>
-          <motion.hr variants={aboutChild} className="mt-3" />
+          <motion.hr
+            variants={aboutChild}
+            className="mt-3 border-2 rounded-xl"
+          />
           <motion.p
             variants={aboutChild}
             className="text-base page-content tracking-wider my-5 sm:my-10 sm:text-2xl"
           >
             I am a computer science student with expertise in various
-            programming languages and full-stack web development technologies in
-            India. I like to learn new technologies. I participate in some of
-            the Hackathons and open-source communities.
+            programming languages and full-stack web developer in India. I like
+            to learn new technologies and participate in the Hackathons and
+            open-source communities.
           </motion.p>
           <motion.h2
             variants={aboutChild}

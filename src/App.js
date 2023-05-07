@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Menu from "./Menu";
 import Main from "./Main";
 import About from "./About";
+import Contact from "./Contact";
+import Work from "./Work";
 import "./App.css";
 
 export default function Root() {
@@ -171,6 +173,8 @@ export default function Root() {
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/Work" element={<Work />} />
           </Routes>
         </Router>
       </motion.div>
