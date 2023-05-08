@@ -2,7 +2,10 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 
-export default function About() {
+export default function About({ setIconColor }) {
+  useEffect(() => {
+    setIconColor("#0369a1");
+  }, [setIconColor]);
   const about = {
     hidden: {
       opacity: 0,
@@ -40,7 +43,7 @@ export default function About() {
   };
   return (
     <>
-      <div className="about-page flex flex-row flex-wrap w-screen justify-center sm:mt-10">
+      <div className="about-page flex flex-row flex-wrap w-screen justify-center sm:mt-10 text-sky-600">
         <motion.div
           variants={image}
           className="photo mx-10 mt-10 sm:basis-1/4 sm:order-last"
@@ -53,7 +56,7 @@ export default function About() {
         </motion.div>
         <motion.div
           variants={about}
-          className="description mx-10 my-10 text-amber-700 sm:basis-1/2"
+          className="description mx-10 my-10 sm:basis-1/2"
         >
           <motion.h1
             variants={aboutChild}
@@ -80,7 +83,10 @@ export default function About() {
           >
             OTHER STUFF
           </motion.h2>
-          <motion.p className="mt-5 sm:text-lg" variants={aboutChild}>
+          <motion.p
+            className="mt-5 sm:text-lg page-content"
+            variants={aboutChild}
+          >
             <a
               className="relative after:bg-amber-700"
               href="https://young-dodo-ec9.notion.site/8925502b519e454e992a08743d0b0900?v=69f795a949d748b284d1f4b22e204f86  "

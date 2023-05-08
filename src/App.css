@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Alkatra&family=Cute+Font&family=Julee&family=Major+Mono+Display&family=Press+Start+2P&family=Smooch+Sans:wght@200;400;600&family=Tourney:wght@400;500;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&family=Cute+Font&family=Darumadrop+One&family=Julee&family=Major+Mono+Display&family=Press+Start+2P&family=Smooch+Sans:wght@200;400;600&family=Tourney:wght@400;500;900&display=swap");
 
 a:after {
   background: none repeat scroll 0 0 transparent;
@@ -43,6 +43,10 @@ ol li::before {
   font-size: 15px;
 }
 
+.arrowFont {
+  font-family: Darumadrop One;
+}
+
 .intro-text {
   font-family: Tourney;
 }
@@ -67,4 +71,108 @@ ol li::before {
 
 .left-side {
   border-radius: 0 48px 0 0;
+}
+
+/* Define the keyframes for the circle animations */
+@keyframes circle-anim-left {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes circle-anim-right {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+}
+
+@keyframes circle-anim-top {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+@keyframes circle-anim-bottom {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+
+/* Define the keyframes for the rectangle animations */
+@keyframes rect-anim-width {
+  0% {
+    width: 6px;
+  }
+  100% {
+    transform: translateX(-12px);
+    width: 30px;
+  }
+}
+
+@keyframes rect-anim-height {
+  0% {
+    height: 6px;
+  }
+  100% {
+    transform: translateY(-12px);
+    height: 30px;
+  }
+}
+
+@keyframes foo {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Apply the animations to the circles and rectangles */
+.icons-style:hover circle:nth-child(3) {
+  animation: circle-anim-top 0.5s forwards;
+}
+
+.icons-style:hover circle:nth-child(5) {
+  animation: circle-anim-right 0.5s forwards;
+}
+
+.icons-style:hover circle:nth-child(7) {
+  animation: circle-anim-bottom 0.5s forwards;
+}
+
+.icons-style:hover circle:nth-child(9) {
+  animation: circle-anim-left 0.5s forwards;
+}
+
+.icons-style:hover rect:nth-child(10) {
+  animation: rect-anim-height 0.5s forwards;
+}
+
+.icons-style:hover rect:nth-child(11) {
+  animation: rect-anim-width 0.5s forwards;
+}
+
+.icons-style:click circle {
+  animation: foo 0.5s forwards;
 }

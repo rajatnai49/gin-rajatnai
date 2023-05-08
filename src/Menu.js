@@ -80,7 +80,7 @@ export default function Menu() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        ↗{/* */}
+                        <span className="arrowFont">↗{/* */}</span>
                         twitter
                       </a>
                     </div>
@@ -97,7 +97,7 @@ export default function Menu() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        ↗{/* */}
+                        <span className="arrowFont">↗{/* */}</span>
                         github
                       </a>
                     </div>
@@ -117,7 +117,7 @@ export default function Menu() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        ↗{/* */}
+                        <span className="arrowFont">↗{/* */}</span>
                         linkedin
                       </a>
                     </div>

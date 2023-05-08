@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import Menu from "./Menu";
 import Main from "./Main";
 import About from "./About";
@@ -9,6 +9,16 @@ import Work from "./Work";
 import "./App.css";
 
 export default function Root() {
+  const [iconColor, setIconColor] = useState("black");
+  const [menuColor, setMenuColor] = useState("#a21caf");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClick = () => {
+    setIsOpen((isOpen) => !isOpen);
+    setIsMenuOpen((isMenuOpen) => !isMenuOpen);
+  };
+
+  // framer animation variants
   const intro = {
     hidden: {
       opacity: 0,
@@ -25,22 +35,6 @@ export default function Root() {
         staggerChildren: 0.1,
       },
     },
-  };
-  const introLine = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      y: [100, 0],
-      opacity: 1,
-      transition: { ease: "easeOut" },
-    },
-  };
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const handleClick = () => {
-    setIsOpen((isOpen) => !isOpen);
-    setIsMenuOpen((isMenuOpen) => !isMenuOpen);
   };
   const headerIcons = {
     hidden: {
@@ -68,16 +62,15 @@ export default function Root() {
     },
   };
   const menuButton = {
-    hover: {
-      scale: 1.2,
-      transition: { duration: 1 },
-    },
-    tap: { scale: 0.9 },
+    hover: {},
+    tap: {},
   };
+
+  // menu icon style
   var circleStyles = {
     opacity: 1,
     fill: "none",
-    stroke: "black",
+    stroke: isMenuOpen ? menuColor : iconColor,
   };
   var rectStyles = {
     width: "6px",
@@ -86,12 +79,14 @@ export default function Root() {
     ry: 3,
     opacity: 0.75,
     fill: "none",
-    stroke: "black",
+    stroke: isMenuOpen ? menuColor : iconColor,
   };
+
   return (
     <>
       <header
-        className={`z-30 ${isMenuOpen ? "text-fuchsia-700" : "text-rose-600"}`}
+        className="z-30"
+        style={{ color: isMenuOpen ? menuColor : iconColor }}
       >
         <motion.div
           initial="hidden"
@@ -123,9 +118,6 @@ export default function Root() {
             </motion.div>
             <motion.div variants={icon} className="header-icon mx-4">
               <motion.button
-                whileTap="tap"
-                whileHover="hover"
-                variants={menuButton}
                 className="hamburger-btn"
                 aria-label="Open menu"
                 onClick={handleClick}
@@ -171,10 +163,19 @@ export default function Root() {
       >
         <Router>
           <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/Work" element={<Work />} />
+            <Route path="/" element={<Main setIconColor={setIconColor} />} />
+            <Route
+              path="/about"
+              element={<About setIconColor={setIconColor} />}
+            />
+            <Route
+              path="/contact"
+              element={<Contact setIconColor={setIconColor} />}
+            />
+            <Route
+              path="/work"
+              element={<Work setIconColor={setIconColor} />}
+            />
           </Routes>
         </Router>
       </motion.div>

@@ -2,7 +2,11 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 
-export default function Main() {
+export default function Main({ setIconColor }) {
+  useEffect(() => {
+    setIconColor("#be123c");
+  }, [setIconColor]);
+
   const intro = {
     hidden: {
       opacity: 0,
@@ -31,7 +35,7 @@ export default function Main() {
     },
   };
   return (
-    <div className="home page-content flex flex-col justify-center items-center w-screen h-screen text-rose-600 sm:pb-24 sm:pr-10">
+    <div className="home page-content flex flex-col justify-center items-center w-screen h-screen text-rose-700 sm:pb-24 sm:pr-10">
       <div className="intro-wrapper">
         <motion.div className="intro-text flex flex-col justify-center items-center">
           <motion.h1
@@ -74,7 +78,7 @@ export default function Main() {
               <div className="link-wrapper">
                 <div className="link tracking-widest">
                   <a className="relative after:bg-rose-600" href="/work">
-                    →{/* */}
+                    <span className="arrowFont">→{/* */}</span>
                     See my projects
                   </a>
                 </div>
@@ -84,7 +88,7 @@ export default function Main() {
               <div className="link-wrapper">
                 <div className="link tracking-widest">
                   <a className="relative after:bg-rose-600" href="/about">
-                    →{/* */}
+                    <span className="arrowFont">→{/* */}</span>
                     More about me
                   </a>
                 </div>

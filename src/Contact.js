@@ -2,7 +2,10 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 
-export default function Contact() {
+export default function Contact({ setIconColor }) {
+  useEffect(() => {
+    setIconColor("#15803d");
+  }, [setIconColor]);
   const about = {
     hidden: {
       opacity: 0,
