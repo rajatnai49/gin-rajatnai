@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
-import { color, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Menu from "./Menu";
 import Main from "./Main";
 import About from "./About";
@@ -9,13 +9,42 @@ import Work from "./Work";
 import "./App.css";
 
 export default function Root() {
+  const storedTheme = localStorage.getItem("theme");
+  const [theme, setTheme] = useState(storedTheme || "light");
+
+  useEffect(() => {
+    // Store the current theme in local storage
+    localStorage.setItem("theme", theme);
+
+    // Update the class of the HTML element
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+    if (menuColor === "#fff") setMenuColor("#a21caf");
+    else setMenuColor("#fff");
+  };
+
   const [iconColor, setIconColor] = useState("black");
   const [menuColor, setMenuColor] = useState("#a21caf");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const menuBtn = document.querySelector(".icons-style");
   const handleClick = () => {
     setIsOpen((isOpen) => !isOpen);
     setIsMenuOpen((isMenuOpen) => !isMenuOpen);
+    if (!isMenuOpen) menuBtn.classList.add("open");
+    else menuBtn.classList.remove("open");
+    if (theme === "dark") {
+      setMenuColor("#fff");
+    } else {
+      setMenuColor("#a21caf");
+    }
   };
 
   // framer animation variants
@@ -62,7 +91,13 @@ export default function Root() {
     },
   };
   const menuButton = {
-    hover: {},
+    hover: {
+      "& circle:nth-child(2)": {
+        x: -90,
+        opacity: 0,
+        transition: { duration: 0.2 },
+      },
+    },
     tap: {},
   };
 
@@ -71,6 +106,7 @@ export default function Root() {
     opacity: 1,
     fill: "none",
     stroke: isMenuOpen ? menuColor : iconColor,
+    strokeWidth: 2,
   };
   var rectStyles = {
     width: "6px",
@@ -80,6 +116,7 @@ export default function Root() {
     opacity: 0.75,
     fill: "none",
     stroke: isMenuOpen ? menuColor : iconColor,
+    strokeWidth: 2,
   };
 
   return (
@@ -114,7 +151,17 @@ export default function Root() {
               variants={icon}
               className="header-icon theme-switch mx-4"
             >
-              <i class="fa-regular fa-moon font-thin text-xl sm:text-2xl"></i>
+              <motion.button
+                onClick={handleThemeSwitch}
+                animate={{ scale: 1, rotate: 0 }}
+                whileHover={{ scale: 1.1, rotate: 360 }}
+              >
+                {theme === "dark" ? (
+                  <i className="fa-regular fa-sun font-thin text-xl sm:text-2xl"></i>
+                ) : (
+                  <i className="fa-regular fa-moon font-thin text-xl sm:text-2xl"></i>
+                )}
+              </motion.button>
             </motion.div>
             <motion.div variants={icon} className="header-icon mx-4">
               <motion.button
@@ -123,9 +170,12 @@ export default function Root() {
                 onClick={handleClick}
               >
                 <div style={{ transform: "none" }}>
-                  <svg
+                  <motion.svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 48 48"
+                    variants={menuButton}
+                    whileHover="hover"
+                    whileTap="tap"
                     width={36}
                     height={36}
                     className="icons-style sm:w-12 sm:h-12"
@@ -141,7 +191,7 @@ export default function Root() {
                     <motion.circle cx={12} cy={24} r={3} {...circleStyles} />
                     <motion.rect x={21} y={21} {...rectStyles} />
                     <motion.rect x={21} y={21} {...rectStyles} />
-                  </svg>
+                  </motion.svg>
                 </div>
               </motion.button>
             </motion.div>
@@ -154,7 +204,7 @@ export default function Root() {
         animate={isOpen ? "visible" : "hidden"}
         variants={intro}
       >
-        <Menu />
+        <Menu theme={theme} />
       </motion.div>
       <motion.div
         initial="hidden"
@@ -163,18 +213,45 @@ export default function Root() {
       >
         <Router>
           <Routes>
-            <Route path="/" element={<Main setIconColor={setIconColor} />} />
+            <Route
+              path="/"
+              element={
+                <Main
+                  setIconColor={setIconColor}
+                  setTheme={setTheme}
+                  theme={theme}
+                />
+              }
+            />
             <Route
               path="/about"
-              element={<About setIconColor={setIconColor} />}
+              element={
+                <About
+                  setIconColor={setIconColor}
+                  setTheme={setTheme}
+                  theme={theme}
+                />
+              }
             />
             <Route
               path="/contact"
-              element={<Contact setIconColor={setIconColor} />}
+              element={
+                <Contact
+                  setIconColor={setIconColor}
+                  setTheme={setTheme}
+                  theme={theme}
+                />
+              }
             />
             <Route
               path="/work"
-              element={<Work setIconColor={setIconColor} />}
+              element={
+                <Work
+                  setIconColor={setIconColor}
+                  setTheme={setTheme}
+                  theme={theme}
+                />
+              }
             />
           </Routes>
         </Router>

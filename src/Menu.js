@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 
-export default function Menu() {
+export default function Menu({ theme }) {
   const intro = {
     hidden: {
       opacity: 0,
@@ -31,7 +31,10 @@ export default function Menu() {
     },
   };
   return (
-    <div className="menu-content flex flex-col justify-center pl-20 w-screen h-screen sm:ml-96 text-fuchsia-700">
+    <div
+      className="menu-content flex flex-col justify-center pl-20  h-screen sm:ml-96"
+      style={{ color: theme === "dark" ? "white" : "#a21caf" }}
+    >
       <div className="menu-items text-3xl font-black sm:text-5xl">
         <nav>
           <ol>

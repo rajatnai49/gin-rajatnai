@@ -2,10 +2,19 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 
-export default function Main({ setIconColor }) {
+export default function Main({ setIconColor, setTheme, theme }) {
   useEffect(() => {
-    setIconColor("#be123c");
-  }, [setIconColor]);
+    if (theme === "dark") {
+      setIconColor("white");
+      document.documentElement.classList.add("dark");
+    } else {
+      setIconColor("#be123c");
+      document.documentElement.classList.remove("dark");
+    }
+  }, [setIconColor, setTheme, theme]);
+
+  const contentClassName =
+    theme === "dark" ? "dark:text-rose-50 dark:bg-blue-900" : "";
 
   const intro = {
     hidden: {
@@ -35,7 +44,10 @@ export default function Main({ setIconColor }) {
     },
   };
   return (
-    <div className="home page-content flex flex-col justify-center items-center w-screen h-screen text-rose-700 sm:pb-24 sm:pr-10">
+    <div
+      className="home page-content flex flex-col justify-center items-center w-screen h-screen sm:pb-24 sm:pr-10"
+      style={{ color: theme === "dark" ? "white" : "#be123c" }}
+    >
       <div className="intro-wrapper">
         <motion.div className="intro-text flex flex-col justify-center items-center">
           <motion.h1

@@ -23,6 +23,11 @@ body {
   overflow: hidden;
 }
 
+.dark {
+  background-color: black;
+  color: white;
+}
+
 ol {
   list-style-type: none;
   counter-reset: my-counter;
@@ -139,16 +144,30 @@ ol li::before {
   }
 }
 
-@keyframes foo {
+@keyframes bar {
   0% {
-    opacity: 1;
+    height: 6px;
   }
   100% {
-    opacity: 0;
+    height: 39.94px;
+    transform: translateY(-16.97px) translateX(0);
+  }
+}
+
+@keyframes foo {
+  0% {
+    width: 6px;
+  }
+  100% {
+    width: 39.94px;
+    transform: translateX(-16.97px) translateY(0);
   }
 }
 
 /* Apply the animations to the circles and rectangles */
+
+/* ////////////////////////////////////////// */
+
 .icons-style:hover circle:nth-child(3) {
   animation: circle-anim-top 0.5s forwards;
 }
@@ -166,13 +185,138 @@ ol li::before {
 }
 
 .icons-style:hover rect:nth-child(10) {
-  animation: rect-anim-height 0.5s forwards;
+  animation: rect-anim-height 0.3s forwards;
 }
 
 .icons-style:hover rect:nth-child(11) {
-  animation: rect-anim-width 0.5s forwards;
+  animation: rect-anim-width 0.3s forwards;
 }
 
-.icons-style:click circle {
-  animation: foo 0.5s forwards;
+/* /////////////////////////////////////// */
+
+.icons-style.open circle:nth-child(2) {
+  animation: circle-anim-top 0.5s forwards;
 }
+
+.icons-style.open:hover circle:nth-child(2) {
+  animation: circle-anim-top 0.5s reverse;
+}
+
+.icons-style.open circle:nth-child(3) {
+  animation: circle-anim-top 0.5s forwards;
+}
+
+.icons-style.open circle:nth-child(4) {
+  animation: circle-anim-right 0.5s forwards;
+}
+
+.icons-style.open:hover circle:nth-child(4) {
+  animation: circle-anim-right 0.5s reverse;
+}
+
+.icons-style.open circle:nth-child(5) {
+  animation: circle-anim-right 0.5s forwards;
+}
+
+.icons-style.open circle:nth-child(6) {
+  animation: circle-anim-bottom 0.5s forwards;
+}
+
+.icons-style.open:hover circle:nth-child(6) {
+  animation: circle-anim-bottom 0.5s reverse;
+}
+
+.icons-style.open circle:nth-child(7) {
+  animation: circle-anim-bottom 0.5s forwards;
+}
+
+.icons-style.open circle:nth-child(8) {
+  animation: circle-anim-left 0.5s forwards;
+}
+
+.icons-style.open:hover circle:nth-child(8) {
+  animation: circle-anim-left 0.5s reverse;
+}
+
+.icons-style.open circle:nth-child(9) {
+  animation: circle-anim-left 0.5s forwards;
+}
+
+.icons-style.open {
+  rotate: 45deg;
+}
+
+.icons-style.open rect:nth-child(10) {
+  animation: foo 0.2s forwards;
+}
+
+.icons-style.open rect:nth-child(11) {
+  animation: bar 0.2s forwards;
+}
+
+@keyframes crossHoverX {
+  0% {
+    width: 39.94px;
+  }
+  100% {
+    transform: translateX(-12px);
+    width: 30px;
+  }
+}
+
+@keyframes crossHoverY {
+  0% {
+    height: 39.94px;
+  }
+  100% {
+    transform: translateY(-12px);
+    height: 30px;
+  }
+}
+
+.icons-style.open:hover rect:nth-child(10) {
+  animation: crossHoverX 0.2s forwards;
+}
+
+.icons-style.open:hover rect:nth-child(11) {
+  animation: crossHoverY 0.2s forwards;
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 45deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+.icons-style.open:hover {
+  animation: rotate 0.5s forwards;
+}
+/* 
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url(../public/polygon-scatter-haikei.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */

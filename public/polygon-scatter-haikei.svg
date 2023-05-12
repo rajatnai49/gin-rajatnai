@@ -1,0 +1,23 @@
+<svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <g>
+        <g transform="translate(23 588)">
+            <path d="M0 -100.4L86.9 -50.2L86.9 50.2L0 100.4L-86.9 50.2L-86.9 -50.2Z" fill="#ffe4e6"></path>
+        </g>
+        <g transform="translate(28 167)">
+            <path d="M0 -37L32 -18.5L32 18.5L0 37L-32 18.5L-32 -18.5Z" fill="#ffe4e6"></path>
+        </g>
+        <g transform="translate(555 417)">
+            <path d="M0 -55L47.6 -27.5L47.6 27.5L0 55L-47.6 27.5L-47.6 -27.5Z" fill="#ffe4e6"></path>
+        </g>
+        <g transform="translate(255 137)">
+            <path d="M0 -38L32.9 -19L32.9 19L0 38L-32.9 19L-32.9 -19Z" fill="#ffe4e6"></path>
+        </g>
+        <g transform="translate(885 52)">
+            <path d="M0 -66L57.2 -33L57.2 33L0 66L-57.2 33L-57.2 -33Z" fill="#ffe4e6"></path>
+        </g>
+        <g transform="translate(693 131)">
+            <path d="M0 -62L53.7 -31L53.7 31L0 62L-53.7 31L-53.7 -31Z" fill="#ffe4e6"></path>
+        </g>
+    </g>
+</svg>

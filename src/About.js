@@ -2,10 +2,14 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 
-export default function About({ setIconColor }) {
+export default function About({ setIconColor, setTheme, theme }) {
   useEffect(() => {
-    setIconColor("#0369a1");
-  }, [setIconColor]);
+    if (theme === "dark") {
+      setIconColor("white");
+    } else {
+      setIconColor("#0369a1");
+    }
+  }, [setIconColor, setTheme, theme]);
   const about = {
     hidden: {
       opacity: 0,
@@ -43,7 +47,10 @@ export default function About({ setIconColor }) {
   };
   return (
     <>
-      <div className="about-page flex flex-row flex-wrap w-screen justify-center sm:mt-10 text-sky-600">
+      <div
+        className="about-page flex flex-row flex-wrap w-screen justify-center sm:mt-10 "
+        style={{ color: theme === "dark" ? "white" : "#0369a1" }}
+      >
         <motion.div
           variants={image}
           className="photo mx-10 mt-10 sm:basis-1/4 sm:order-last"
@@ -88,7 +95,7 @@ export default function About({ setIconColor }) {
             variants={aboutChild}
           >
             <a
-              className="relative after:bg-amber-700"
+              className="relative after:bg-sky-600"
               href="https://young-dodo-ec9.notion.site/8925502b519e454e992a08743d0b0900?v=69f795a949d748b284d1f4b22e204f86  "
               target="_blank"
               rel="noreferrer"
@@ -97,13 +104,13 @@ export default function About({ setIconColor }) {
               anime & manga
             </a>
             <a
-              className="relative after:bg-amber-700 ml-5"
-              href="silver36#7803"
+              className="relative after:bg-sky-600 ml-5"
+              href="https://rajatnai.hashnode.dev/"
               target="_blank"
               rel="noreferrer"
             >
               ↗{/* */}
-              silver36#7803
+              blog
             </a>
           </motion.p>
         </motion.div>

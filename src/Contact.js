@@ -2,10 +2,14 @@ import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 
-export default function Contact({ setIconColor }) {
+export default function Contact({ setIconColor, setTheme, theme }) {
   useEffect(() => {
-    setIconColor("#15803d");
-  }, [setIconColor]);
+    if (theme === "dark") {
+      setIconColor("white");
+    } else {
+      setIconColor("#15803d");
+    }
+  }, [setIconColor, setTheme, theme]);
   const about = {
     hidden: {
       opacity: 0,
@@ -33,10 +37,13 @@ export default function Contact({ setIconColor }) {
   };
   return (
     <>
-      <div className="relative about-page flex flex-row flex-wrap w-screen h-screen justify-center sm:mt-10">
+      <div
+        className="relative about-page flex flex-row flex-wrap w-screen h-screen justify-center sm:mt-10"
+        style={{ color: theme === "dark" ? "white" : "#15803d" }}
+      >
         <motion.div
           variants={about}
-          className="description mx-10 my-10 text-green-700 w-full sm:mx-36"
+          className="description mx-10 my-10 w-full sm:mx-36"
         >
           <motion.h1
             variants={aboutChild}

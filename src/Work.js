@@ -40,10 +40,14 @@ const projects = [
   },
 ];
 
-export default function Wrok({ setIconColor }) {
+export default function Wrok({ setIconColor, setTheme, theme }) {
   useEffect(() => {
-    setIconColor("#be185d");
-  }, [setIconColor]);
+    if (theme === "dark") {
+      setIconColor("white");
+    } else {
+      setIconColor("#be185d");
+    }
+  }, [setIconColor, setTheme, theme]);
   const [hoveredProjectId, setHoveredProjectId] = useState(null);
 
   const handleMouseEnter = (projectId) => {
@@ -147,8 +151,11 @@ export default function Wrok({ setIconColor }) {
 
   return (
     <>
-      <div className="work-page flex flex-row flex-wrap w-screen justify-center mt-24">
-        <motion.div className="work-div relative flex flex-row flex-warp w-screen mx-10 my-10 text-pink-700  sm:mx-36">
+      <div
+        className="work-page flex flex-row flex-wrap w-screen justify-center mt-24"
+        style={{ color: theme === "dark" ? "white" : "#be185d" }}
+      >
+        <motion.div className="work-div relative flex flex-row flex-warp w-screen mx-10 my-10  sm:mx-36">
           <motion.div className="left-side relative h-screen w-screen basis-1/2 hidden sm:block">
             {projectImages}
           </motion.div>
