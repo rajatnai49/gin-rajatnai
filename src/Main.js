@@ -45,70 +45,70 @@ export default function Main({ setIconColor, setTheme, theme }) {
   };
   return (
     <div
-      className="home page-content flex flex-col justify-center items-center w-screen h-screen sm:pb-24 sm:pr-10"
+      className="home page-content justify-center pl-10 pb-24 flex flex-col  h-screen sm:pb-24 sm:pr-10 sm:ml-80"
       style={{ color: theme === "dark" ? "white" : "#be123c" }}
     >
       <div className="intro-wrapper">
-        <motion.div className="intro-text flex flex-col justify-center items-center">
-          <motion.h1
-            variants={introLine}
-            className="intro-id my-3 text-3xl font-medium flex flex-col justify-center items-center sm:block sm:text-5xl"
-          >
-            HEY, MY NAME IS
-            <div className="ml-2 font-black underline decoration-wavy underline-offset-8 hover:underline-offset-4 decoration-4 hover:decoration-8 sm:inline">
+        <motion.div className="intro-text flex flex-col">
+          <motion.div className="intro-id  text-sm font-semibold flex flex-col sm:text-xl">
+            <motion.div variants={introLine} className="intro-greeting1 my-2">
+              hey, i'm
+            </motion.div>
+            <motion.div
+              variants={introLine}
+              className="font-black text-4xl sm:text-8xl my-2"
+            >
               RAJAT NAI
-            </div>
-          </motion.h1>
-          <motion.h1
-            variants={introLine}
-            className="intro-id my-3 text-3xl font-medium flex flex-col justify-center items-center sm:block sm:text-5xl"
-          >
-            BUT YOU CAN CALL ME
-            <div className="ml-2 font-black underline decoration-wavy underline-offset-8 hover:underline-offset-4 decoration-4 hover:decoration-8 sm:inline">
+            </motion.div>
+          </motion.div>
+          <motion.div className="intro-id text-sm font-semibold flex flex-col sm:text-xl sm:mt-3">
+            <motion.div variants={introLine} className="intro-greeting2 my-2">
+              call me
+            </motion.div>
+            <motion.div
+              variants={introLine}
+              className="font-black text-4xl sm:text-8xl my-2"
+            >
               GIN
-            </div>
-          </motion.h1>
-        </motion.div>
-
-        <div className="intro-roles flex flex-col justify-center items-center text-base mt-4 sm:text-xl">
-          <motion.p variants={introLine} className="intro-role">
-            I’m a Software Engineer,
-          </motion.p>
-          <motion.p variants={introLine} className="intro-role">
-            Computer Scientist
-          </motion.p>
-          <motion.p variants={introLine} className="intro-role">
-            &amp;full-stack web developer
-          </motion.p>
-        </div>
-        <motion.div
-          variants={introLine}
-          className="intro-links flex flex-col justify-center items-center text-base mt-4 sm:text-xl"
-        >
-          <ul className="flex flex-row">
-            <li className="mx-6">
-              <div className="link-wrapper">
-                <div className="link tracking-widest">
-                  <a className="relative after:bg-rose-600" href="/work">
-                    <span className="arrowFont">→{/* */}</span>
-                    See my projects
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li className="mx-6">
-              <div className="link-wrapper">
-                <div className="link tracking-widest">
-                  <a className="relative after:bg-rose-600" href="/about">
-                    <span className="arrowFont">→{/* */}</span>
-                    More about me
-                  </a>
-                </div>
-              </div>
-            </li>
-          </ul>
+            </motion.div>
+          </motion.div>
         </motion.div>
       </div>
+      <motion.div
+        variants={introLine}
+        className="intro-roles mt-3 text-lg font-medium sm:text-2xl my-2"
+      >
+        <motion.p className="intro-role sm:inline-block">
+          Software Engineer,
+        </motion.p>
+        <motion.p className="intro-role sm:inline sm:ml-3">
+          &amp; full-stack web developer
+        </motion.p>
+      </motion.div>
+      <motion.div className="intro-links mt-3 text-base font-light sm:text-xl">
+        <ul className="">
+          <motion.li variants={introLine} className="my-2">
+            <div className="link-wrapper sm:inline-block">
+              <div className="link tracking-widest">
+                <a className="relative after:bg-rose-600" href="/work">
+                  <span className="arrowFont">→{/* */}</span>
+                  see my projects
+                </a>
+              </div>
+            </div>
+          </motion.li>
+          <motion.li variants={introLine} className="my-2">
+            <div className="link-wrapper  sm:inline">
+              <div className="link tracking-widest">
+                <a className="relative after:bg-rose-600" href="/about">
+                  <span className="arrowFont">→{/* */}</span>
+                  more about me
+                </a>
+              </div>
+            </div>
+          </motion.li>
+        </ul>
+      </motion.div>
     </div>
   );
 }

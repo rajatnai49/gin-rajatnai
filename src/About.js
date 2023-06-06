@@ -84,19 +84,37 @@ export default function About({ setIconColor, setTheme, theme }) {
             to learn new technologies and participate in the Hackathons and
             open-source communities.
           </motion.p>
-          <motion.h2
-            variants={aboutChild}
-            className="text-xl menu-items font-black underline underline-offset-8 sm:text-2xl"
-          >
-            OTHER STUFF
-          </motion.h2>
+
           <motion.p
-            className="mt-5 sm:text-lg page-content"
+            className="mt-2 sm:text-lg page-content"
             variants={aboutChild}
           >
             <a
               className="relative after:bg-sky-600"
-              href="https://young-dodo-ec9.notion.site/8925502b519e454e992a08743d0b0900?v=69f795a949d748b284d1f4b22e204f86  "
+              href="https://young-dodo-ec9.notion.site/b8fea50be5f14e8387829edca6b49161?v=b2466836e9c34bed99df242bd7693b87&pvs=4"
+              target="_blank"
+              rel="noreferrer"
+            >
+              ↗{/* */}
+              music
+            </a>
+            <a
+              className="relative after:bg-sky-600 ml-5"
+              href="https://young-dodo-ec9.notion.site/Notes-5781be096a474627afe9761d6c9b101c?pvs=4s"
+              target="_blank"
+              rel="noreferrer"
+            >
+              ↗{/* */}
+              notes
+            </a>
+          </motion.p>
+          <motion.p
+            className="mt-2 sm:text-lg page-content"
+            variants={aboutChild}
+          >
+            <a
+              className="relative after:bg-sky-600"
+              href="https://young-dodo-ec9.notion.site/ef126b975f894a6ead01679f2dd68397?v=a256b4530be44b86aad55a97323d3430&pvs=4"
               target="_blank"
               rel="noreferrer"
             >
@@ -110,7 +128,7 @@ export default function About({ setIconColor, setTheme, theme }) {
               rel="noreferrer"
             >
               ↗{/* */}
-              blog
+              write
             </a>
           </motion.p>
         </motion.div>

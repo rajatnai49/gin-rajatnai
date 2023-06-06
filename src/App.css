@@ -19,6 +19,7 @@ a:hover:after {
   right: 0;
 }
 
+html,
 body {
   overflow: hidden;
 }
@@ -48,12 +49,16 @@ ol li::before {
   font-size: 15px;
 }
 
+.intro-id {
+  position: relative;
+}
+
 .arrowFont {
   font-family: Darumadrop One;
 }
 
 .intro-text {
-  font-family: Tourney;
+  font-family: Major Mono Display;
 }
 
 .full-identity {

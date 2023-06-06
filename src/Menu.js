@@ -69,7 +69,7 @@ export default function Menu({ theme }) {
           </ol>
         </nav>
       </div>
-      <div className="menu-socials sm:text-2xl">
+      <div className="menu-socials page-content sm:text-2xl">
         <ul>
           <div>
             <motion.div variants={linkElement} className="flex">

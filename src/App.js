@@ -6,6 +6,8 @@ import Main from "./Main";
 import About from "./About";
 import Contact from "./Contact";
 import Work from "./Work";
+import Project from "./Project";
+import { projects } from "./Projects";
 import "./App.css";
 
 export default function Root() {
@@ -250,7 +252,15 @@ export default function Root() {
                   setIconColor={setIconColor}
                   setTheme={setTheme}
                   theme={theme}
-                />
+                >
+                  {projects.map((project) => (
+                    <Route
+                      key={project.id}
+                      path={`/work/${project.id}`}
+                      element={<Project project={project} />}
+                    />
+                  ))}
+                </Work>
               }
             />
           </Routes>
