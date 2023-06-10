@@ -29,6 +29,13 @@ body {
   color: white;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  z-index: 20;
+}
+
 ol {
   list-style-type: none;
   counter-reset: my-counter;
@@ -47,6 +54,14 @@ ol li::before {
   left: 0;
   bottom: 0;
   font-size: 15px;
+}
+
+.intro-wrapper {
+  z-index: 2;
+}
+
+.intro-roles {
+  z-index: 5;
 }
 
 .intro-id {

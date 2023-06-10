@@ -1,10 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import { easeInOut, motion } from "framer-motion";
-import { useAnimate, usePresence } from "framer-motion";
-import { animate } from "framer-motion";
 import { projects } from "./Projects";
-
 import "./App.css";
+import { Cone } from "./ThreeScene";
 
 export default function Wrok({ setIconColor, setTheme, theme }) {
   useEffect(() => {
@@ -114,13 +112,15 @@ export default function Wrok({ setIconColor, setTheme, theme }) {
       )}
     </>
   ));
-
+  const renderer_color = theme === "dark" ? "#000000" : "#ffffff";
+  const mesh_color = theme === "dark" ? "#be185d" : "#fce7f3";
   return (
     <>
       <div
         className="work-page flex flex-row flex-wrap w-screen justify-center mt-24"
         style={{ color: theme === "dark" ? "white" : "#be185d" }}
       >
+        <Cone renderer_color={renderer_color} mesh_color={mesh_color} />
         <motion.div className="work-div relative flex flex-row flex-warp w-screen mx-10 my-10  sm:mx-36">
           <motion.div className="left-side relative h-screen w-screen basis-1/2 hidden sm:block">
             {projectImages}
@@ -130,7 +130,7 @@ export default function Wrok({ setIconColor, setTheme, theme }) {
               WORK
             </motion.h1>
             <motion.hr className="my-3 border-2" />
-            <motion.div className="">
+            <motion.div className="z-10">
               <motion.ul variants={uldiv}>{projectItems}</motion.ul>
             </motion.div>
           </motion.div>

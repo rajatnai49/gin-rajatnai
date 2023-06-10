@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
+import { Square } from "./ThreeScene";
 
 export default function Contact({ setIconColor, setTheme, theme }) {
   useEffect(() => {
@@ -35,15 +36,18 @@ export default function Contact({ setIconColor, setTheme, theme }) {
       transition: { ease: "easeOut" },
     },
   };
+  const renderer_color = theme === "dark" ? "#000000" : "#ffffff";
+  const mesh_color = theme === "dark" ? "#15803d" : "#bbf7d0";
   return (
     <>
+      <Square renderer_color={renderer_color} mesh_color={mesh_color} />
       <div
         className="relative about-page flex flex-row flex-wrap w-screen h-screen justify-center sm:mt-10"
         style={{ color: theme === "dark" ? "white" : "#15803d" }}
       >
         <motion.div
           variants={about}
-          className="description mx-10 my-10 w-full sm:mx-36"
+          className="description mx-10 my-10 w-full sm:mx-36 z-10"
         >
           <motion.h1
             variants={aboutChild}

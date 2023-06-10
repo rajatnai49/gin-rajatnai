@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
+import { Triangle } from "./ThreeScene";
 
 export default function About({ setIconColor, setTheme, theme }) {
   useEffect(() => {
@@ -45,8 +46,11 @@ export default function About({ setIconColor, setTheme, theme }) {
       transition: { ease: "easeOut" },
     },
   };
+  const renderer_color = theme === "dark" ? "#000000" : "#ffffff";
+  const mesh_color = theme === "dark" ? "#0369a1" : "#bae6fd";
   return (
     <>
+      <Triangle renderer_color={renderer_color} mesh_color={mesh_color} />
       <div
         className="about-page flex flex-row flex-wrap w-screen justify-center sm:mt-10 "
         style={{ color: theme === "dark" ? "white" : "#0369a1" }}
@@ -63,7 +67,7 @@ export default function About({ setIconColor, setTheme, theme }) {
         </motion.div>
         <motion.div
           variants={about}
-          className="description mx-10 my-10 sm:basis-1/2"
+          className="description mx-10 my-10 sm:basis-1/2 z-10"
         >
           <motion.h1
             variants={aboutChild}
