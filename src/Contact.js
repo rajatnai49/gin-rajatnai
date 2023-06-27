@@ -42,12 +42,12 @@ export default function Contact({ setIconColor, setTheme, theme }) {
     <>
       <Square renderer_color={renderer_color} mesh_color={mesh_color} />
       <div
-        className="relative about-page flex flex-row flex-wrap w-screen h-screen justify-center sm:mt-10"
+        className="relative about-page flex flex-col w-screen h-screen justify-start mt-12"
         style={{ color: theme === "dark" ? "white" : "#15803d" }}
       >
         <motion.div
           variants={about}
-          className="description mx-10 my-10 w-full sm:mx-36 z-10"
+          className="description mx-10 mb-28 sm:mx-36 z-10 sm:"
         >
           <motion.h1
             variants={aboutChild}
@@ -64,7 +64,7 @@ export default function Contact({ setIconColor, setTheme, theme }) {
               <h2 className="sm:text-3xl font-semibold">Mail</h2>
               <div className="flex flex-col sm:text-xl">
                 <a
-                  className="relative after:bg-green-700 order-last sm:ml-10 "
+                  className="relative after:bg-green-700 order-last sm:ml-10"
                   href="mailto:rajatnai49@gmail.com"
                   target="_blank"
                   rel="noreferrer"

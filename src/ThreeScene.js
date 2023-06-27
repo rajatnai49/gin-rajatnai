@@ -223,7 +223,7 @@ export const Cone = ({ renderer_color, mesh_color }) => {
       height: window.innerHeight,
     };
     const scene = new THREE.Scene();
-    const geometry = new THREE.ConeGeometry(10, 10);
+    const geometry = new THREE.ConeGeometry(8, 8);
     const material = new THREE.MeshPhongMaterial({
       emissive: mesh_color,
     });

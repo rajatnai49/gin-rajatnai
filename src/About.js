@@ -52,22 +52,16 @@ export default function About({ setIconColor, setTheme, theme }) {
     <>
       <Triangle renderer_color={renderer_color} mesh_color={mesh_color} />
       <div
-        className="about-page flex flex-row flex-wrap w-screen justify-center sm:mt-10 "
+        className="about-page flex flex-col w-screen justify-start mt-10 h-screen"
         style={{ color: theme === "dark" ? "white" : "#0369a1" }}
       >
-        <motion.div
+        {/* <motion.div
           variants={image}
-          className="photo mx-10 mt-10 sm:basis-1/4 sm:order-last"
-        >
-          <img
-            className="shadow-xl rounded-2xl shadow-amber-700 saturate-200 brightness-100 contrast-100"
-            src="law1.jpg"
-            alt="my_photo"
-          />
-        </motion.div>
+          className="photo mx-10 mt-8 basis-3/4 h-2/5 rounded-xl  shadow-inner shadow-cyan-500 sm:basis-1/4 sm:order-last sm:h-3/5"
+        ></motion.div> */}
         <motion.div
           variants={about}
-          className="description mx-10 my-10 sm:basis-1/2 z-10"
+          className="description mx-10 my-8 sm:basis-1/2 z-10 h-3/5 sm:mx-32"
         >
           <motion.h1
             variants={aboutChild}
@@ -81,16 +75,35 @@ export default function About({ setIconColor, setTheme, theme }) {
           />
           <motion.p
             variants={aboutChild}
-            className="text-base page-content tracking-wider my-5 sm:my-10 sm:text-2xl"
+            className="text-sm page-content tracking-wider my-5 sm:my-10 sm:text-2xl"
           >
-            I am a computer science student with expertise in various
-            programming languages and full-stack web developer in India. I like
-            to learn new technologies and participate in the Hackathons and
-            open-source communities.
+            Hey there! I'm <strong>Rajat N. Nai</strong>, hailing from Gujarat,
+            India. I'm passionate about <strong>software development</strong>{" "}
+            and love delving into exciting projects on GitHub. I enjoy diving
+            into the realms of web development, cloud computing, and data
+            science, constantly expanding my knowledge.I find joy in taking
+            notes and <strong>sharing</strong> what I learn with others.
+          </motion.p>
+          <motion.p
+            variants={aboutChild}
+            className="text-sm page-content tracking-wider my-5 sm:my-10 sm:text-2xl"
+          >
+            Apart from my tech adventures, I also indulge in{" "}
+            <strong>comic book</strong> writing and character design as a fun
+            hobby.
           </motion.p>
 
           <motion.p
-            className="mt-2 sm:text-lg page-content"
+            variants={aboutChild}
+            className="text-sm page-content tracking-wider my-5 sm:my-10 sm:text-2xl"
+          >
+            <strong>Life</strong> is all about living it to the fullest and
+            embracing every opportunity to learn, and that's exactly what I
+            strive for!
+          </motion.p>
+
+          <motion.p
+            className="mt-2 sm:text-2xl page-content"
             variants={aboutChild}
           >
             <a
@@ -113,7 +126,7 @@ export default function About({ setIconColor, setTheme, theme }) {
             </a>
           </motion.p>
           <motion.p
-            className="mt-2 sm:text-lg page-content"
+            className="my-2 sm:text-2xl page-content"
             variants={aboutChild}
           >
             <a
@@ -132,7 +145,7 @@ export default function About({ setIconColor, setTheme, theme }) {
               rel="noreferrer"
             >
               ↗{/* */}
-              write
+              blog
             </a>
           </motion.p>
         </motion.div>

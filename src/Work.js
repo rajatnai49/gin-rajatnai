@@ -89,7 +89,7 @@ export default function Wrok({ setIconColor, setTheme, theme }) {
           <motion.span className="projectArrow arrowFont hidden sm:block sm:text-3xl">
             →{/* */}
           </motion.span>
-          <motion.h1 className="text-xl sm:text-2xl">{project.name}</motion.h1>
+          <motion.h1 className="text-lg sm:text-2xl">{project.name}</motion.h1>
           <motion.p className="ml-auto text-sm sm:text-lg">
             {project.category[0]}
           </motion.p>
@@ -105,7 +105,7 @@ export default function Wrok({ setIconColor, setTheme, theme }) {
         <motion.img
           animate={hoveredProjectId === project.id ? "visible" : "hidden"}
           variants={projectImg}
-          className={`${project.id} left-side w-full h-full object-cover opacity-70`}
+          className={`${project.id} left-side w-full h-full object-cover opacity-95`}
           src={project.img}
           alt={project.id}
         />
@@ -117,11 +117,11 @@ export default function Wrok({ setIconColor, setTheme, theme }) {
   return (
     <>
       <div
-        className="work-page flex flex-row flex-wrap w-screen justify-center mt-24"
+        className="work-page flex flex-row flex-wrap w-screen justify-center mt-12"
         style={{ color: theme === "dark" ? "white" : "#be185d" }}
       >
         <Cone renderer_color={renderer_color} mesh_color={mesh_color} />
-        <motion.div className="work-div relative flex flex-row flex-warp w-screen mx-10 my-10  sm:mx-36">
+        <motion.div className="work-div relative flex flex-row flex-warp w-screen mx-10 my-8 sm:mx-36">
           <motion.div className="left-side relative h-screen w-screen basis-1/2 hidden sm:block">
             {projectImages}
           </motion.div>

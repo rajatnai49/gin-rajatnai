@@ -48,8 +48,6 @@ export default function Root() {
       setMenuColor("#a21caf");
     }
   };
-
-  // framer animation variants
   const intro = {
     hidden: {
       opacity: 0,
@@ -131,7 +129,7 @@ export default function Root() {
           initial="hidden"
           animate="visible"
           variants={headerIcons}
-          className="header-content static flex items-baseline w-screen mt-4 sm:mt-10 sm:px-16"
+          className="header-content static flex items-baseline w-screen mt-4 sm:mt-10 sm:px-16 overflow-hidden"
         >
           <div className="left-part flex items-baseline justify-center">
             <motion.div variants={icon} className="header-icon logo mx-4">
@@ -202,7 +200,7 @@ export default function Root() {
       </header>
       <motion.div
         initial="hidden"
-        className="menu absolute"
+        className="menu absolute overflow-hidden"
         animate={isOpen ? "visible" : "hidden"}
         variants={intro}
       >
@@ -252,17 +250,23 @@ export default function Root() {
                   setIconColor={setIconColor}
                   setTheme={setTheme}
                   theme={theme}
-                >
-                  {projects.map((project) => (
-                    <Route
-                      key={project.id}
-                      path={`/work/${project.id}`}
-                      element={<Project project={project} />}
-                    />
-                  ))}
-                </Work>
+                ></Work>
               }
             />
+            {projects.map((project) => (
+              <Route
+                key={project.id}
+                path={`work/${project.id}`}
+                element={
+                  <Project
+                    project={project}
+                    setIconColor={setIconColor}
+                    setTheme={setTheme}
+                    theme={theme}
+                  />
+                }
+              />
+            ))}
           </Routes>
         </Router>
       </motion.div>

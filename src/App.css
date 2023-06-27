@@ -98,6 +98,16 @@ ol li::before {
   border-radius: 0 48px 0 0;
 }
 
+/* about page  */
+
+.photo {
+  background-image: url(../public/law1.jpg);
+  background-position: initial;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* box-shadow: inset 10px 10px 150px 10px #a5f3fc; */
+}
+
 /* Define the keyframes for the circle animations */
 @keyframes circle-anim-left {
   0% {
@@ -314,29 +324,3 @@ ol li::before {
 .icons-style.open:hover {
   animation: rotate 0.5s forwards;
 }
-/* 
-.home::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-image: url(../public/polygon-scatter-haikei.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  animation: floating 3s ease-in-out infinite;
-}
-
-@keyframes floating {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-} */
