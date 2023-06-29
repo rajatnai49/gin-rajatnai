@@ -95,7 +95,10 @@ export default function Wrok({ setIconColor, setTheme, theme }) {
           </motion.p>
         </motion.li>
       </a>
-      <motion.hr className="my-3 border-1.5" />
+      <motion.hr
+        className="my-3 border-1.5"
+        style={{ color: theme === "dark" ? "white" : "#be185d" }}
+      />
     </div>
   ));
 
@@ -117,19 +120,22 @@ export default function Wrok({ setIconColor, setTheme, theme }) {
   return (
     <>
       <div
-        className="work-page flex flex-row flex-wrap w-screen justify-center mt-12"
+        className="work-page flex flex-row flex-wrap w-screen justify-center mt-12 overflow-hidden"
         style={{ color: theme === "dark" ? "white" : "#be185d" }}
       >
         <Cone renderer_color={renderer_color} mesh_color={mesh_color} />
         <motion.div className="work-div relative flex flex-row flex-warp w-screen mx-10 my-8 sm:mx-36">
-          <motion.div className="left-side relative h-screen w-screen basis-1/2 hidden sm:block">
+          <motion.div className="left-side relative h-70 w-screen basis-1/2 hidden sm:block">
             {projectImages}
           </motion.div>
           <motion.div className="right-side basis-full sm:basis-1/2 w-2/4 sm:mx-16">
             <motion.h1 className="menu-items text-3xl font-black sm:text-5xl">
               WORK
             </motion.h1>
-            <motion.hr className="my-3 border-2" />
+            <motion.hr
+              className="my-3 border-2"
+              style={{ color: theme === "dark" ? "white" : "#be185d" }}
+            />
             <motion.div className="z-10">
               <motion.ul variants={uldiv}>{projectItems}</motion.ul>
             </motion.div>

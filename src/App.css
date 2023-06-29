@@ -21,7 +21,7 @@ a:hover:after {
 
 html,
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .dark {
@@ -54,6 +54,14 @@ ol li::before {
   left: 0;
   bottom: 0;
   font-size: 15px;
+}
+
+.h-90 {
+  height: 90vh;
+}
+
+.h-70 {
+  height: 75vh;
 }
 
 .intro-wrapper {
@@ -95,7 +103,8 @@ ol li::before {
 /* work page  */
 
 .left-side {
-  border-radius: 0 48px 0 0;
+  border-radius: 0 48px 48px 0;
+  margin: 0;
 }
 
 /* about page  */

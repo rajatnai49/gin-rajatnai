@@ -42,7 +42,7 @@ export default function Contact({ setIconColor, setTheme, theme }) {
     <>
       <Square renderer_color={renderer_color} mesh_color={mesh_color} />
       <div
-        className="relative about-page flex flex-col w-screen h-screen justify-start mt-12"
+        className="relative about-page flex flex-col w-screen justify-start mt-12"
         style={{ color: theme === "dark" ? "white" : "#15803d" }}
       >
         <motion.div
@@ -55,7 +55,11 @@ export default function Contact({ setIconColor, setTheme, theme }) {
           >
             CONTACT
           </motion.h1>
-          <motion.hr variants={aboutChild} className="mt-3 border-2" />
+          <motion.hr
+            variants={aboutChild}
+            className="mt-3 border-2"
+            style={{ color: theme === "dark" ? "white" : "#15803d" }}
+          />
           <motion.div
             variants={aboutChild}
             className="page-content flex flex-row flex-wrap sm:flex-nowrap w-full mt-16 text-lg"

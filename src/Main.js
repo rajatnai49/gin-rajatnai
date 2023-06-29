@@ -51,7 +51,7 @@ export default function Main({ setIconColor, setTheme, theme }) {
     <>
       <Circle renderer_color={renderer_color} mesh_color={mesh_color} />
       <div
-        className="home page-content justify-center pl-10 pb-24 flex flex-col  h-screen sm:pb-24 sm:pr-10 sm:ml-80"
+        className="home page-content justify-center pl-10 pb-24 flex flex-col h-90 sm:pb-24 sm:pr-10 sm:ml-80"
         style={{ color: theme === "dark" ? "white" : "#be123c" }}
       >
         <div className="intro-wrapper">

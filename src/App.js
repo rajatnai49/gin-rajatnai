@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import { motion } from "framer-motion";
 import Menu from "./Menu";
@@ -255,7 +255,6 @@ export default function Root() {
             />
             {projects.map((project) => (
               <Route
-                key={project.id}
                 path={`work/${project.id}`}
                 element={
                   <Project
