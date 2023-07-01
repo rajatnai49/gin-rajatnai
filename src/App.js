@@ -36,18 +36,33 @@ export default function Root() {
   const [menuColor, setMenuColor] = useState("#a21caf");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const menuBtn = document.querySelector(".icons-style");
   const handleClick = () => {
     setIsOpen((isOpen) => !isOpen);
     setIsMenuOpen((isMenuOpen) => !isMenuOpen);
-    if (!isMenuOpen) menuBtn.classList.add("open");
-    else menuBtn.classList.remove("open");
-    if (theme === "dark") {
-      setMenuColor("#fff");
-    } else {
-      setMenuColor("#a21caf");
-    }
   };
+
+  useEffect(() => {
+    const menuBtn = document.querySelector(".icons-style");
+    if (menuBtn) {
+      if (!isMenuOpen) {
+        menuBtn.classList.add("open");
+      } else {
+        menuBtn.classList.remove("open");
+      }
+    }
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    const menuBtn = document.querySelector(".icons-style");
+    if (menuBtn) {
+      if (theme === "dark") {
+        setMenuColor("#fff");
+      } else {
+        setMenuColor("#a21caf");
+      }
+    }
+  }, [theme]);
+
   const intro = {
     hidden: {
       opacity: 0,
@@ -255,9 +270,10 @@ export default function Root() {
             />
             {projects.map((project) => (
               <Route
-                path={`work/${project.id}`}
+                path={`/work/${project.key}`}
                 element={
                   <Project
+                    key={project.key}
                     project={project}
                     setIconColor={setIconColor}
                     setTheme={setTheme}

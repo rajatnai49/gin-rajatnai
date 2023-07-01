@@ -1,25 +1,25 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 
 export default function Menu({ theme }) {
-  const intro = {
-    hidden: {
-      opacity: 0,
-      zIndex: -20,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-    visible: {
-      opacity: 1,
-      zIndex: 20,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.1,
-      },
-    },
-  };
+  // const intro = {
+  //   hidden: {
+  //     opacity: 0,
+  //     zIndex: -20,
+  //     transition: {
+  //       when: "afterChildren",
+  //     },
+  //   },
+  //   visible: {
+  //     opacity: 1,
+  //     zIndex: 20,
+  //     transition: {
+  //       when: "beforeChildren",
+  //       staggerChildren: 0.1,
+  //     },
+  //   },
+  // };
   const linkElement = {
     hidden: {
       opacity: 0,

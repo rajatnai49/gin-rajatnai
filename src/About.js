@@ -36,16 +36,16 @@ export default function About({ setIconColor, setTheme, theme }) {
       transition: { ease: "easeOut" },
     },
   };
-  const image = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      x: [200, 0],
-      opacity: 0.75,
-      transition: { ease: "easeOut" },
-    },
-  };
+  // const image = {
+  //   hidden: {
+  //     opacity: 0,
+  //   },
+  //   visible: {
+  //     x: [200, 0],
+  //     opacity: 0.75,
+  //     transition: { ease: "easeOut" },
+  //   },
+  // };
   const renderer_color = theme === "dark" ? "#000000" : "#ffffff";
   const mesh_color = theme === "dark" ? "#0369a1" : "#bae6fd";
   return (

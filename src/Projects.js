@@ -1,6 +1,6 @@
 export const projects = [
   {
-    id: "gin",
+    key: "gin",
     name: "Portfolio",
     category: ["Branding", "Web Development", "UX/UI Design"],
     technologies: ["react", "tailwind", "framer", "three", "javascript"],
@@ -12,7 +12,7 @@ export const projects = [
   },
 
   {
-    id: "pravas",
+    key: "pravas",
     name: "Pravas",
     category: ["Web Development", "UX/UI Design", "Data Base Management"],
     technologies: ["python", "django", "html", "css", "sql"],
@@ -29,7 +29,7 @@ export const projects = [
   },
 
   {
-    id: "brahmi",
+    key: "brahmi",
     name: "Brahmi",
     category: ["Web Development", "UX/UI Design", "Data Base Management"],
     technologies: ["java", "springboot", "sql", "bootstrap"],
@@ -46,12 +46,11 @@ export const projects = [
   },
 
   {
-    id: "pythonprojects",
+    key: "pythonprojects",
     name: "Python Projects",
     category: [
       "Python Development",
       "Game Design",
-      "File Structure",
       "Data Science",
       "Automation",
     ],
@@ -64,7 +63,7 @@ export const projects = [
   },
 
   {
-    id: "sneakySnake",
+    key: "sneakySnake",
     name: "Sneaky Snake",
     category: ["Game Design", "Javascript Development"],
     technologies: ["javascript"],

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 import Circle from "./ThreeScene";
@@ -14,26 +14,26 @@ export default function Main({ setIconColor, setTheme, theme }) {
     }
   }, [setIconColor, setTheme, theme]);
 
-  const contentClassName =
-    theme === "dark" ? "dark:text-rose-50 dark:bg-blue-900" : "";
+  // const contentClassName =
+  //   theme === "dark" ? "dark:text-rose-50 dark:bg-blue-900" : "";
 
-  const intro = {
-    hidden: {
-      opacity: 0,
-      zIndex: -20,
-      transition: {
-        when: "afterChildren",
-      },
-    },
-    visible: {
-      opacity: 1,
-      zIndex: 20,
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.1,
-      },
-    },
-  };
+  // const intro = {
+  //   hidden: {
+  //     opacity: 0,
+  //     zIndex: -20,
+  //     transition: {
+  //       when: "afterChildren",
+  //     },
+  //   },
+  //   visible: {
+  //     opacity: 1,
+  //     zIndex: 20,
+  //     transition: {
+  //       when: "beforeChildren",
+  //       staggerChildren: 0.1,
+  //     },
+  //   },
+  // };
   const introLine = {
     hidden: {
       opacity: 0,

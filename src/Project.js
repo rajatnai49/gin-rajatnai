@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
+import { projects } from "./Projects";
 
 export default function Project({ project, setIconColor, setTheme, theme }) {
   useEffect(() => {
     if (theme === "dark") {
       setIconColor("white");
     } else {
-      setIconColor("black");
+      setIconColor("#92400e");
     }
   }, [setIconColor, setTheme, theme]);
   const about = {
@@ -35,11 +36,15 @@ export default function Project({ project, setIconColor, setTheme, theme }) {
       transition: { ease: "easeOut" },
     },
   };
+  const currentProjectIndex = projects.findIndex((p) => p.key === project.key);
+  const nextProjectIndex = (currentProjectIndex + 1) % projects.length;
+  const nextProject = projects[nextProjectIndex];
+
   return (
     <>
       <div
         className="w-screen z-40 font-black justify-center"
-        style={{ color: theme === "dark" ? "white" : "black" }}
+        style={{ color: theme === "dark" ? "white" : "#92400e" }}
       >
         <motion.div
           variants={about}
@@ -54,7 +59,7 @@ export default function Project({ project, setIconColor, setTheme, theme }) {
           <motion.hr
             variants={aboutChild}
             className="mt-3 border-2 rounded-xl"
-            style={{ color: theme === "dark" ? "white" : "black" }}
+            style={{ color: theme === "dark" ? "white" : "#92400e" }}
           />
           <motion.div
             variants={aboutChild}
@@ -82,14 +87,16 @@ export default function Project({ project, setIconColor, setTheme, theme }) {
                   </span>
                 ))}
               </motion.p>
-              <motion.p className="flex flex-row align-center my-8">
-                <strong>Team</strong>:
-                {Object.keys(project.team).map((memberKey) => (
-                  <span key={memberKey} className="font-normal ml-2">
-                    {` ${project.team[memberKey].name} `}
-                  </span>
-                ))}
-              </motion.p>
+              {Object.keys(project.team).length > 0 && (
+                <motion.p className="flex flex-row align-center my-8">
+                  <strong>Team</strong>:
+                  {Object.keys(project.team).map((memberKey) => (
+                    <span key={memberKey} className="font-normal ml-2">
+                      {` ${project.team[memberKey].name} `}
+                    </span>
+                  ))}
+                </motion.p>
+              )}
               <motion.p>
                 <strong>Year</strong>:
                 <span className="font-normal ml-2">{project.year}</span>
@@ -103,11 +110,28 @@ export default function Project({ project, setIconColor, setTheme, theme }) {
               <motion.a
                 href={project.link}
                 target="blank"
-                className="font-normal text-lg"
+                className="relative after:bg-amber-700 p-1 font-normal text-lg"
               >
                 ↗ View Project
               </motion.a>
             </motion.div>
+          </motion.div>
+
+          <motion.div
+            variants={aboutChild}
+            className="w-full mt-2 flex justify-end items-center"
+          >
+            {nextProject && (
+              <>
+                <strong>Next Project:</strong>
+                <motion.a
+                  href={`/work/${nextProject.key}`}
+                  className="relative after:bg-amber-700 font-normal text-lg ml-5"
+                >
+                  ↗ {nextProject.name}
+                </motion.a>
+              </>
+            )}
           </motion.div>
         </motion.div>
       </div>

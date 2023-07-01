@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { easeInOut, motion } from "framer-motion";
 import { projects } from "./Projects";
 import "./App.css";
@@ -77,13 +77,13 @@ export default function Wrok({ setIconColor, setTheme, theme }) {
 
   const projectItems = projects.map((project) => (
     <div>
-      <a href={`work/${project.id}`}>
+      <a href={`work/${project.key}`}>
         <motion.li
           variants={lidiv}
           whileHover="hover"
           className="projectItem flex flex-row items-baseline page-content"
-          key={project.id}
-          onMouseEnter={() => handleMouseEnter(project.id)}
+          key={project.key}
+          onMouseEnter={() => handleMouseEnter(project.key)}
           onMouseLeave={handleMouseLeave}
         >
           <motion.span className="projectArrow arrowFont hidden sm:block sm:text-3xl">
@@ -104,13 +104,13 @@ export default function Wrok({ setIconColor, setTheme, theme }) {
 
   const projectImages = projects.map((project) => (
     <>
-      {hoveredProjectId === project.id && (
+      {hoveredProjectId === project.key && (
         <motion.img
-          animate={hoveredProjectId === project.id ? "visible" : "hidden"}
+          animate={hoveredProjectId === project.key ? "visible" : "hidden"}
           variants={projectImg}
-          className={`${project.id} left-side w-full h-full object-cover opacity-95`}
+          className={`${project.key} left-side w-full h-full object-cover opacity-95`}
           src={project.img}
-          alt={project.id}
+          alt={project.key}
         />
       )}
     </>
