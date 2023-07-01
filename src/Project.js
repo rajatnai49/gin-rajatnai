@@ -48,7 +48,7 @@ export default function Project({ project, setIconColor, setTheme, theme }) {
       >
         <motion.div
           variants={about}
-          className="description mx-10 my-8 sm:basis-1/2 z-10 h-3/5 sm:mx-32"
+          className="description page-content mx-10 my-8 sm:basis-1/2 z-10 h-3/5 sm:mx-32"
         >
           <motion.h1
             variants={aboutChild}
@@ -112,7 +112,7 @@ export default function Project({ project, setIconColor, setTheme, theme }) {
                 target="blank"
                 className="relative after:bg-amber-700 p-1 font-normal text-lg"
               >
-                ↗ View Project
+                ↗ <i>View Project</i>
               </motion.a>
             </motion.div>
           </motion.div>

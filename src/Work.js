@@ -96,7 +96,7 @@ export default function Wrok({ setIconColor, setTheme, theme }) {
         </motion.li>
       </a>
       <motion.hr
-        className="my-3 "
+        className="my-3"
         style={{ borderTopColor: theme === "dark" ? "white" : "#be185d" }}
       />
     </div>
