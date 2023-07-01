@@ -44,7 +44,7 @@ export default function Root() {
   useEffect(() => {
     const menuBtn = document.querySelector(".icons-style");
     if (menuBtn) {
-      if (!isMenuOpen) {
+      if (isMenuOpen) {
         menuBtn.classList.add("open");
       } else {
         menuBtn.classList.remove("open");
