@@ -59,7 +59,7 @@ export default function Project({ project, setIconColor, setTheme, theme }) {
           <motion.hr
             variants={aboutChild}
             className="mt-3 border-2 rounded-xl"
-            style={{ color: theme === "dark" ? "white" : "#92400e" }}
+            style={{ borderTopColor: theme === "dark" ? "white" : "#92400e" }}
           />
           <motion.div
             variants={aboutChild}

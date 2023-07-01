@@ -96,8 +96,8 @@ export default function Wrok({ setIconColor, setTheme, theme }) {
         </motion.li>
       </a>
       <motion.hr
-        className="my-3 border-1.5"
-        style={{ color: theme === "dark" ? "white" : "#be185d" }}
+        className="my-3 "
+        style={{ borderTopColor: theme === "dark" ? "white" : "#be185d" }}
       />
     </div>
   ));
@@ -134,7 +134,7 @@ export default function Wrok({ setIconColor, setTheme, theme }) {
             </motion.h1>
             <motion.hr
               className="my-3 border-2"
-              style={{ color: theme === "dark" ? "white" : "#be185d" }}
+              style={{ borderTopColor: theme === "dark" ? "white" : "#be185d" }}
             />
             <motion.div className="z-10">
               <motion.ul variants={uldiv}>{projectItems}</motion.ul>

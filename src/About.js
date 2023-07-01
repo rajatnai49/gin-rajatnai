@@ -71,8 +71,8 @@ export default function About({ setIconColor, setTheme, theme }) {
           </motion.h1>
           <motion.hr
             variants={aboutChild}
-            className="mt-3 border-2 rounded-xl"
-            style={{ color: theme === "dark" ? "white" : "#0369a1" }}
+            className="mt-3 border-2"
+            style={{ borderTopColor: theme === "dark" ? "white" : "#0369a1" }}
           />
           <motion.p
             variants={aboutChild}
