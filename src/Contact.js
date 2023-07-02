@@ -83,7 +83,7 @@ export default function Contact({ setIconColor, setTheme, theme }) {
               <div className="flex flex-col sm:text-xl">
                 <a
                   className="relative after:bg-green-700 "
-                  href="https://young-dodo-ec9.notion.site/8925502b519e454e992a08743d0b0900?v=69f795a949d748b284d1f4b22e204f86  "
+                  href="https://twitter.com/rpsilver36"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -92,7 +92,7 @@ export default function Contact({ setIconColor, setTheme, theme }) {
                 </a>
                 <a
                   className="relative after:bg-green-700"
-                  href="https://young-dodo-ec9.notion.site/8925502b519e454e992a08743d0b0900?v=69f795a949d748b284d1f4b22e204f86  "
+                  href="https://github.com/rajatnai49"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -101,7 +101,7 @@ export default function Contact({ setIconColor, setTheme, theme }) {
                 </a>
                 <a
                   className="relative after:bg-green-700"
-                  href="https://young-dodo-ec9.notion.site/8925502b519e454e992a08743d0b0900?v=69f795a949d748b284d1f4b22e204f86  "
+                  href="https://www.linkedin.com/in/rajat-nai-5a1425221/"
                   target="_blank"
                   rel="noreferrer"
                 >
