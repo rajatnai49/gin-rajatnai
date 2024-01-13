@@ -121,8 +121,8 @@ export default function Menu({ theme }) {
                         rel="noreferrer"
                       >
                         <span className="arrowFont">↗{/* */}</span>
-                        linkedin
-                      </a>
+                        blog
+                    </a>
                     </div>
                   </div>
                 </div>

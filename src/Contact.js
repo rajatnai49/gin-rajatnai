@@ -99,15 +99,7 @@ export default function Contact({ setIconColor, setTheme, theme }) {
                   ↗{/* */}
                   github
                 </a>
-                <a
-                  className="relative after:bg-green-700"
-                  href="https://www.linkedin.com/in/rajat-nai-5a1425221/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  ↗{/* */}
-                  linkedin
-                </a>
+
               </div>
             </div>
           </motion.div>

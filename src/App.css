@@ -1,7 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&family=Cute+Font&family=Darumadrop+One&family=Julee&family=Major+Mono+Display&family=Press+Start+2P&family=Smooch+Sans:wght@200;400;600&family=Tourney:wght@400;500;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Alkatra&family=Cute+Font&family=Darumadrop+One&family=Julee&family=Major+Mono+Display&family=Press+Start+2P&family=Smooch+Sans:wght@200;400;600&family=Tourney:wght@400;500;900&display=swap");
 
 a:after {
   background: none repeat scroll 0 0 transparent;
