@@ -57,7 +57,7 @@ export default function Contact({ setIconColor, setTheme, theme }) {
           </motion.h1>
           <motion.hr
             variants={aboutChild}
-            className="mt-3 border-2"
+            className="mt-3 border-t-4"
             style={{ borderTopColor: theme === "dark" ? "white" : "#15803d" }}
           />
           <motion.div
