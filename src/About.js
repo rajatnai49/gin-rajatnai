@@ -107,15 +107,15 @@ export default function About({ setIconColor, setTheme, theme }) {
                         className="mt-2 sm:text-2xl page-content"
                         variants={aboutChild}
                     >
-                        <a
+                        {/* <a
                             className="relative after:bg-sky-600 "
                             href="https://young-dodo-ec9.notion.site/Notes-5781be096a474627afe9761d6c9b101c?pvs=4s"
                             target="_blank"
                             rel="noreferrer"
                         >
-                            ↗{/* */}
+                            ↗
                             notes
-                        </a>
+                        </a> */}
                         <a
                             className="relative after:bg-sky-600 ml-5"
                             href="https://rajatnai.hashnode.dev/"
@@ -126,7 +126,7 @@ export default function About({ setIconColor, setTheme, theme }) {
                             blog
                         </a>
                     </motion.p>
-                    <motion.p
+                    {/*<motion.p
                         className="my-2 sm:text-2xl page-content"
                         variants={aboutChild}
                     >
@@ -136,11 +136,11 @@ export default function About({ setIconColor, setTheme, theme }) {
                             target="_blank"
                             rel="noreferrer"
                         >
-                            ↗{/* */}
+                            ↗
                             anime & manga
                         </a>
 
-                    </motion.p>
+                    </motion.p>*/}
                 </motion.div>
             </div>
         </>

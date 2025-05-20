@@ -79,7 +79,7 @@ export default function Menu({ theme }) {
                     <div className="link">
                       <a
                         className="relative after:bg-fuchsia-700"
-                        href="https://twitter.com/rpsilver36"
+                        href="https://twitter.com/itsruffy56"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -109,7 +109,7 @@ export default function Menu({ theme }) {
               </li>
               <br />
             </motion.div>
-            <motion.div variants={linkElement}>
+            {/* <motion.div variants={linkElement}>
               <li>
                 <div className="item-inner">
                   <div className="link-wrapper">
@@ -120,7 +120,7 @@ export default function Menu({ theme }) {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        <span className="arrowFont">↗{/* */}</span>
+                        <span className="arrowFont">↗</span>
                         blog
                     </a>
                     </div>
@@ -128,7 +128,7 @@ export default function Menu({ theme }) {
                 </div>
               </li>
               <br />
-            </motion.div>
+            </motion.div> */}
           </div>
         </ul>
       </div>

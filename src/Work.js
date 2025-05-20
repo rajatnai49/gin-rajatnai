@@ -126,7 +126,7 @@ export default function Wrok({ setIconColor, setTheme, theme }) {
         <Cone renderer_color={renderer_color} mesh_color={mesh_color} />
         <motion.div className="work-div relative flex flex-row flex-warp w-screen mx-10 my-8 sm:mx-36">
           <motion.div className="left-side relative h-70 w-screen basis-1/2 hidden sm:block">
-            {projectImages}
+            {/* {projectImages} */}
           </motion.div>
           <motion.div className="right-side basis-full sm:basis-1/2 w-2/4 sm:mx-16">
             <motion.h1 className="menu-items text-3xl font-black sm:text-5xl">

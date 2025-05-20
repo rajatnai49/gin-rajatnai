@@ -83,7 +83,7 @@ export default function Contact({ setIconColor, setTheme, theme }) {
               <div className="flex flex-col sm:text-xl">
                 <a
                   className="relative after:bg-green-700 "
-                  href="https://twitter.com/rpsilver36"
+                  href="https://twitter.com/itsruffy56"
                   target="_blank"
                   rel="noreferrer"
                 >

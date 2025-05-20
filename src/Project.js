@@ -75,15 +75,16 @@ export default function Project({ project, setIconColor, setTheme, theme }) {
                   >{` ${category} `}</span>
                 ))}
               </motion.p>
-              <motion.p className="flex flex-row align-center my-8">
+              <motion.p className="flex flex-row align-center my-8 gap-2 flex-wrap">
                 <strong>Technologies</strong>:
                 {project.technologies.map((tech, index) => (
-                  <span className="font-normal" key={index}>
-                    <img
+                  <span className="font-normal text-orange-400" key={index}>
+                    {/* <img
                       src={`../images/icons/${tech}.png`}
                       className="w-6 mx-2"
                       alt={tech}
-                    />
+                    /> */}
+                    {tech}
                   </span>
                 ))}
               </motion.p>
@@ -112,7 +113,7 @@ export default function Project({ project, setIconColor, setTheme, theme }) {
                 target="blank"
                 className="relative after:bg-amber-700 p-1 font-normal text-lg"
               >
-                ↗ <i>View Project</i>
+                ↗ <i>View</i>
               </motion.a>
             </motion.div>
           </motion.div>
